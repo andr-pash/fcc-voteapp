@@ -1,0 +1,28 @@
+<% include ./partials/head %>
+
+  <div class="row">
+
+  <% polls.forEach(function(poll) { %>
+    <div class="col-sm-4 col-xs-6 poll-card">
+      <h5>
+        <%= poll.title %>
+      </h5>
+
+      <canvas class="thumbnail-canvas" data-hash=<%=poll.hashId%>></canvas>
+
+
+      <div className="option-container">
+        <span> Number of Options </span> <span>: <%= poll.options.length %> </span>
+      </div>
+      <div className="option-container">
+        <span> Total Votes: </span> <span>: <%= poll.totalVotes %> </span>
+      </div>
+
+
+
+      <a href=<%= "/poll/" + poll.hashId %> class="btn btn-primary btn-openpoll">Open</a>
+    </div>
+  <%})%>
+
+  </div>
+<% include ./partials/footer %>

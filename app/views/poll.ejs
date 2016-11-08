@@ -1,0 +1,21 @@
+<% include ./partials/head %>
+
+<canvas id="big-canvas" width="400" height="200"></canvas>
+
+<form action="" class="options" id="options-form"></form>
+
+<% if (loggedIn) { %>
+  <form class="col-sm-12 add-option-form" id="add-option-form">
+    <input type="text" id="add-opton-input"/>
+    <button class="btn btn-default" id="submit-option">Add Option</button>
+  </form>
+<% } %>
+
+
+<button id="submit-vote" class="btn btn-lg btn-success">Vote!</button>
+
+<% if (isOwner) { %>
+  <button type="button" id="delete-poll" class="btn btn-lg btn-danger">Delete this Poll!</button>
+<% } %>
+
+<% include ./partials/footer %>
